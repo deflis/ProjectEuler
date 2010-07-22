@@ -25,14 +25,13 @@ namespace NekoVampire.MathLib
             foreach (var i in max.UpTo((long)Math.Floor(Math.Sqrt(x))))
             {
                 max = i;
-                if (!primes.AsParallel().Any(y => i % y == 0))
+                if (primes.AsParallel().All(y => i % y != 0))
                 {
                     primes.Add(i);
                     if (x % i == 0)
                         return false;
                 }
             }
-            //Console.WriteLine("{0} is Prime.", x);
             return true;
         }
 
