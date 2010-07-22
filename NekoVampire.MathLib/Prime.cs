@@ -20,16 +20,23 @@ namespace NekoVampire.MathLib
         {
             if (x < max)
                 return primes.Contains(x);
-            if (primes.AsParallel().Any(y => x % y == 0))
+            if (primes.Any(y => x % y == 0))
                 return false;
-            foreach (var i in max.UpTo((long)Math.Floor(Math.Sqrt(x))))
+            long n = (long)Math.Floor(Math.Sqrt(x));
+            if (n > max)
             {
-                max = i;
-                if (primes.AsParallel().All(y => i % y != 0))
+                lock (primes)
                 {
-                    primes.Add(i);
-                    if (x % i == 0)
-                        return false;
+                    foreach (var i in max.UpTo(n))
+                    {
+                        max = i;
+                        if (primes.AsParallel().All(y => i % y != 0))
+                        {
+                            primes.Add(i);
+                            if (x % i == 0)
+                                return false;
+                        }
+                    }
                 }
             }
             return true;
