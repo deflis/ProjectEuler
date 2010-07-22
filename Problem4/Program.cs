@@ -11,7 +11,8 @@ namespace Problem4
         static void Main(string[] args)
         {
             var n = 999.DownTo(100);
-            Console.WriteLine("{0}", n.product(n, (x, y) => x * y).Where(IsPalindrome).Max());
+            //Console.WriteLine("{0}", n.product(n, (x, y) => x * y).Where(IsPalindrome).Max());
+            Console.WriteLine("{0}", n.Zip(n, (x, y) => x * y).AsParallel().Where(IsPalindrome).Max());
             Console.ReadKey();
         }
 
