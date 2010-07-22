@@ -15,7 +15,7 @@ namespace Problem3
 
             var prime = new Prime();
 
-            Console.WriteLine(((long)Math.Floor(Math.Sqrt(x))).DownTo(3).Where(prime.IsPrime).AsParallel().First(y => x % y == 0));
+            Console.WriteLine(((long)Math.Floor(Math.Sqrt(x))).DownTo(3).AsParallel().Where(prime.IsPrime).First(y => x % y == 0));
 
             Console.ReadKey();
         }
@@ -34,12 +34,12 @@ namespace Problem3
             {
                 if(x < max)
                     return primes.Contains(x);
-                if (primes.AsParallel().Where(y => x % y == 0).IsEmpty())
+                if (primes.AsParallel().Any(y => x % y == 0))
                     return false;
                 foreach(var i in max.UpTo((long)Math.Floor(Math.Sqrt(x))))
                 {
                     max = i;
-                    if (primes.AsParallel().Where(y => i % y == 0).IsEmpty())
+                    if (!primes.AsParallel().Any(y => i % y == 0))
                     {
                         primes.Add(i);
                         if (x % i == 0)
