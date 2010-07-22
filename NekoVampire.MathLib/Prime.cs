@@ -38,7 +38,7 @@ namespace NekoVampire.MathLib
         public IEnumerable<long> Primes()
         {
             var copy = primes.ToArray();
-            return copy.Concat(max.UpToInfinity().Where(IsPrime));
+            return copy.Concat(max.UpToInfinity().AsParallel().AsOrdered().Where(IsPrime));
         }
     }
 }
