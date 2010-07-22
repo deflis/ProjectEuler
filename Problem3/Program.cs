@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Achiral;
 using Achiral.Extension;
+using NekoVampire.MathLib;
 
 namespace Problem3
 {
@@ -18,36 +19,6 @@ namespace Problem3
             Console.WriteLine(((long)Math.Floor(Math.Sqrt(x))).DownTo(3).AsParallel().Where(prime.IsPrime).First(y => x % y == 0));
 
             Console.ReadKey();
-        }
-
-        class Prime
-        {
-            List<long> primes;
-            long max = 10;
-
-            public Prime()
-            {
-                primes = new List<long> { 2, 3, 5, 7 };
-            }
-
-            public bool IsPrime(long x)
-            {
-                if(x < max)
-                    return primes.Contains(x);
-                if (primes.AsParallel().Any(y => x % y == 0))
-                    return false;
-                foreach(var i in max.UpTo((long)Math.Floor(Math.Sqrt(x))))
-                {
-                    max = i;
-                    if (!primes.AsParallel().Any(y => i % y == 0))
-                    {
-                        primes.Add(i);
-                        if (x % i == 0)
-                            return false;
-                    }
-                }
-                return true;
-            }
         }
     }
 }

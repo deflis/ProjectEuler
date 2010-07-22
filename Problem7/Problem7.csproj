@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{532D800A-1239-41E3-A61E-6610EADC4D96}</ProjectGuid>
+    <ProjectGuid>{416FBA44-880E-4E0E-BF0B-35AD11CFBB67}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Problem3</RootNamespace>
-    <AssemblyName>Problem3</AssemblyName>
+    <RootNamespace>Problem7</RootNamespace>
+    <AssemblyName>Problem7</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -34,12 +34,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Achiral">
-      <HintPath>..\..\..\..\..\..\..\src\Achiral\Achiral\bin\Release\Achiral.dll</HintPath>
+    <Reference Include="Achiral, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\src\Achiral\Achiral\bin\Release\Achiral.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />

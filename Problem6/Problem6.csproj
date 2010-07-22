@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{532D800A-1239-41E3-A61E-6610EADC4D96}</ProjectGuid>
+    <ProjectGuid>{ADECC278-C17A-4660-AF05-CA2FFF2280F9}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Problem3</RootNamespace>
-    <AssemblyName>Problem3</AssemblyName>
+    <RootNamespace>Problem6</RootNamespace>
+    <AssemblyName>Problem6</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -35,7 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Achiral">
-      <HintPath>..\..\..\..\..\..\..\src\Achiral\Achiral\bin\Release\Achiral.dll</HintPath>
+      <HintPath>..\..\..\..\..\src\Achiral\Achiral\bin\Release\Achiral.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -49,12 +49,6 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\NekoVampire.MathLib\NekoVampire.MathLib.csproj">
-      <Project>{520C9447-507C-4D56-AB70-65EF7E856244}</Project>
-      <Name>NekoVampire.MathLib</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
