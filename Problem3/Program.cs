@@ -34,12 +34,12 @@ namespace Problem3
             {
                 if(x < max)
                     return primes.Contains(x);
-                if (default(long) != primes.AsParallel().FirstOrDefault(y => x % y == 0))
+                if (primes.AsParallel().Where(y => x % y == 0).IsEmpty())
                     return false;
                 foreach(var i in max.UpTo((long)Math.Floor(Math.Sqrt(x))))
                 {
                     max = i;
-                    if (default(long) == primes.AsParallel().FirstOrDefault(y => i % y == 0))
+                    if (primes.AsParallel().Where(y => i % y == 0).IsEmpty())
                     {
                         primes.Add(i);
                         if (x % i == 0)
