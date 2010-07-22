@@ -10,7 +10,7 @@ namespace Problem5
     {
         static void Main(string[] args)
         {
-            var n = 2520.UpToInfinity();
+            var n = (2520 / 10).UpToInfinity().Select(x => x * 10);
             Console.WriteLine("{0}", n.AsParallel().Where(
                 x =>
                     ! 2.UpTo(20)
